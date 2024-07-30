@@ -38,7 +38,6 @@ workspace {
         publicUser -> frontStoreApp "Uses"
         authorizedUser -> frontStoreApp "Uses"
         authorizedUser -> searchWebApi "Searches books" "Async Request"
-        authorizedUser -> adminWebApi "Administrates book details" "Async Request"
         internalUser -> backOfficeApp "Administrates book details" "Async Request"
 
         # Relationship between Containers
@@ -66,7 +65,6 @@ workspace {
 
         # Relationship between Components
         publisherRecurrentUpdater -> adminWebApi "Updates data using"
-        authorizedUser -> bookService "Administering book details via" "JSON/HTTPS"
         internalUser -> authService "Authorizes using" "Sync Request"
         bookService -> authService "Uses"
         bookService -> bookEventPublisher "Uses"
